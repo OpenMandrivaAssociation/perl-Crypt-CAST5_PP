@@ -1,26 +1,21 @@
-%define	module	Crypt-CAST5_PP
-%define name	perl-%{module}
-%define	modprefix Crypt
+%define	upstream_name	 Crypt-CAST5_PP
+%define upstream_version 1.04
 
-%define version 1.04
-
-%define	rel	1
-%define release %mkrel %{rel}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	CAST5 block cipher in pure Perl
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
 License:	Artistic/GPL
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}/
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{modprefix}/%{module}-%{version}.tar.gz
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Crypt/%{upstream_name}-%{upstream_version}.tar.gz
+
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel >= 5.8.1
 %endif
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-root
-
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module provides a pure Perl implementation of the CAST5 block cipher.
@@ -30,7 +25,7 @@ developed by C. Adams and S. Tavares.
 The CAST5 cipher is available royalty-free.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
@@ -49,6 +44,6 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc README
-%{perl_vendorlib}/%{modprefix}/*
-%{perl_vendorlib}/auto/%{modprefix}/*
+%{perl_vendorlib}/Crypt/*
+%{perl_vendorlib}/auto/Crypt/*
 %{_mandir}/*/*
