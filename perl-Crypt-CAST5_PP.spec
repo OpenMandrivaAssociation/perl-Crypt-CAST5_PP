@@ -4,7 +4,7 @@
 Summary:	CAST5 block cipher in pure Perl
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	13
+Release:	14
 License:	Artistic/GPLv2
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}/
