@@ -10,6 +10,7 @@ Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}/
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Crypt/%{modname}-%{modver}.tar.gz
 BuildArch:	noarch
+BuildRequires:	perl(Test::More)
 BuildRequires:	perl-devel
 
 %description
