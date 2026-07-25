@@ -3,12 +3,12 @@
 
 Summary:	CAST5 block cipher in pure Perl
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	17
+Version:	%{modver}
+Release:	18
 License:	Artistic/GPLv2
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{modname}/
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Crypt/%{modname}-%{modver}.tar.gz
+Url:		https://metacpan.org/dist/Crypt-CAST5_PP
+Source0:	https://cpan.metacpan.org/authors/id/B/BO/BOBMATH/Crypt-CAST5_PP-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	make
 BuildRequires:	perl(Test::More)
